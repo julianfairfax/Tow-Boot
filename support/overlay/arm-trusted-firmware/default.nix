@@ -112,6 +112,13 @@ in {
     filesToInstall = [ "build/${platform}/release/bl31/bl31.elf"];
   };
 
+  armTrustedFirmwareRK3566 = buildArmTrustedFirmware rec {
+    extraMakeFlags = [ "bl31" ];
+    platform = "rk3566";
+    extraMeta.platforms = ["aarch64-linux"];
+    filesToInstall = [ "build/${platform}/release/bl31/bl31.elf"];
+  };
+
   armTrustedFirmwareS905 = buildArmTrustedFirmware rec {
     extraMakeFlags = [ "bl31" ];
     platform = "gxbb";
